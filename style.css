@@ -109,9 +109,14 @@ nav {
 }
 
 /* Ensure home page content sits above canvas */
-#page-home { position: relative; }
+/* #page-home { position: relative; }
+#page-home .page-inner,
+#page-home .site-footer { position: relative; z-index: 1; } */
+
+#page-home { position: relative; height: calc(100vh - 56px); overflow: hidden; }
 #page-home .page-inner,
 #page-home .site-footer { position: relative; z-index: 1; }
+
 
 
 #page-home .page-inner {
