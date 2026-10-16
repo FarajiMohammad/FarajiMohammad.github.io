@@ -112,6 +112,11 @@
    *                       transparent, revealing the new page.
    */
   function runTransition(done) {
+    /* Skip the decorative sweep when reduced motion is requested. */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      done();
+      return;
+    }
     var canvas = getOverlay();
     var ctx    = canvas.getContext('2d');
     var W      = canvas.width;
@@ -301,7 +306,7 @@
         });
       });
 
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'auto' });
     });
   }
 

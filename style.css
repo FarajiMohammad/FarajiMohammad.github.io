@@ -130,7 +130,7 @@ nav {
 #page-home .page-inner,
 #page-home .site-footer { position: relative; z-index: 1; } */
 
-#page-home { position: relative; height: calc(100vh - 56px); overflow: hidden; }
+#page-home { position: relative; min-height: 100vh; height: auto; overflow: visible; }
 #page-home .page-inner,
 #page-home .site-footer { position: relative; z-index: 1; }
 
@@ -138,7 +138,7 @@ nav {
 
 #page-home .page-inner {
   display: flex; align-items: center;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px - 86px);
   gap: 5rem; padding: 3rem 3rem;
 }
 
@@ -755,7 +755,7 @@ body.dark .skill-category { background: #161b22; border-color: #30363d; }
 
 /* ── RESPONSIVE: Very small ≤420px ── */
 @media (max-width: 420px) {
-  .nav-logo span:not(.nav-dot) { display: none; }
+  .nav-links button { padding: .3rem .5rem; }
   .resume-sidebar { grid-template-columns: 1fr; }
   .circle-btn { width: 78px; height: 78px; font-size: .78rem; }
   .home-hello { font-size: 2.6rem; }
@@ -845,4 +845,10 @@ body.dark .skill-category { background: #161b22; border-color: #30363d; }
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* Keep the original navigation usable on very narrow phones. */
+@media (max-width: 380px) {
+  .nav-logo .nav-name { display: none; }
+  .nav-links button { padding: .3rem .42rem; }
 }
