@@ -430,7 +430,7 @@ body.dark .r-sub-entry::before { box-shadow: 0 0 0 3px var(--white); }
   transition: background .2s, transform .15s;
 }
 .dl-btn:hover,
-.dl-btn:focus-visible { background: #111; transform: translateY(-1px); }
+.dl-btn:focus-visible { transform: translateY(-1px); }
 .dl-btn svg { width: 16px; height: 16px; }
 
 /* ── CONTACT PAGE ── */
