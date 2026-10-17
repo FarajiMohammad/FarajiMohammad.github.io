@@ -47,15 +47,11 @@
         : '<span aria-hidden="true">🌙</span> Dark';
       btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     }
-    try { localStorage.setItem('darkMode', isDark ? '1' : '0'); } catch (e) {}
   }
 
-  /* Restore saved preference on load */
-  try {
-    if (localStorage.getItem('darkMode') === '1') {
-      document.body.classList.add('dark');
-    }
-  } catch (e) {}
+  /* Always start in light mode on a fresh page load.
+     Dark mode remains available through the toggle for this visit. */
+  document.body.classList.remove('dark');
 
   /* Update toggle button label once DOM is ready */
   document.addEventListener('DOMContentLoaded', function () {
