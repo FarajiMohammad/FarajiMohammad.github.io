@@ -348,14 +348,13 @@ body.dark .sidebar-item a.email-link:focus-visible { border-bottom-color: #DCE6E
   border-color: var(--cyan);
   transform: translateY(-2px);
 }
-.r-company-header { display: flex; align-items: flex-start; gap: .8rem; margin-bottom: 1rem; }
+.r-company-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem; }
 .r-company-logo {
-  width: 40px; height: 40px; border-radius: 9px; flex-shrink: 0;
-  background: linear-gradient(135deg, #2F4858, #101820); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .8rem;
-  letter-spacing: .02em;
-  box-shadow: 0 3px 10px rgba(0,0,0,.18);
+  display: block; flex: none; object-fit: contain; border-radius: 6px;
+}
+.r-company-logo-seal {
+  /* Frame the seal above the wordmark. */
+  object-fit: cover; object-position: center top; clip-path: inset(0 0 1px);
 }
 .r-company-header-text { min-width: 0; }
 .r-company-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .92rem; color: var(--text); }
@@ -378,11 +377,11 @@ body.dark .sidebar-item a.email-link:focus-visible { border-bottom-color: #DCE6E
 body.dark .r-badge { background: #1c2130; }
 body.dark .r-badge-remote { background: #0d2d2c; color: #29c4c0; border-color: #29c4c044; }
 
-.r-sub-entries { border-left: 2px solid var(--border); margin-left: 19px; padding-left: 1.4rem; }
+.r-sub-entries { border-left: 2px solid var(--border); margin-left: 17px; padding-left: 29px; }
 .r-sub-entry { position: relative; padding-bottom: 1.15rem; transition: padding-left .2s ease; }
 .r-sub-entry:last-child { padding-bottom: 0; }
 .r-sub-entry::before {
-  content: ''; position: absolute; left: -1.57rem; top: .35rem;
+  content: ''; position: absolute; left: -35px; top: .35rem;
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--white); border: 2px solid var(--cyan);
   box-shadow: 0 0 0 3px var(--white);
@@ -394,6 +393,7 @@ body.dark .r-sub-entry::before { box-shadow: 0 0 0 3px var(--white); }
 .r-sub-entry-top { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
 .r-sub-entry-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .86rem; color: var(--text); }
 .r-sub-entry-date { font-size: .72rem; color: var(--light); font-family: 'Space Grotesk', sans-serif; margin-top: .2rem; }
+.r-sub-entry .r-entry-body { margin-top: .35rem; }
 
 .pub-entry {
   background: var(--white); border: 1px solid var(--border);
